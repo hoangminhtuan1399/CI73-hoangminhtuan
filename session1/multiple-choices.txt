@@ -1,0 +1,13 @@
+Câu 1: false
+Câu 2: true
+Câu 3: true
+Câu 4: 3
+Câu 5: 4
+Câu 6: 1
+Câu 7: 4
+Câu 8: 2
+Câu 9: 1
+Câu 10: 2
+Câu 11: 1
+Câu 12: 1
+Câu 13: 4

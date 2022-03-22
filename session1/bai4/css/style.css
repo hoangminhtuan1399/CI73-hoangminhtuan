@@ -1,0 +1,121 @@
+:root {
+    --blue-color: royalblue;
+    --gray-color: #e6e6e6;
+}
+
+::placeholder {
+    font-family: "Poppins", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    width: 60%;
+    padding: 1.5rem 3rem;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+#input__wrapper {
+    padding: 3rem 2.5rem;
+    border-bottom: 1px solid gray;  
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input {
+    height: 4rem;
+    padding: 1rem;
+    background-color: var(--gray-color);
+    font-size: 1.7rem;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+input:focus {
+    border: none;
+    outline: 1px solid black;
+    background-color: white;
+}
+
+form>input {
+    width: 40%;
+}
+
+button {
+    height: 4rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    background-color: var(--blue-color);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: midnightblue;
+}
+
+#btn__add-contact {
+    width: 18%;
+}
+
+#search__wrapper {
+    padding: 3rem 2.5rem;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#search__wrapper>input {
+    width: 60%;
+}
+
+#btn__search {
+    width: 10%;
+}
+
+#btn__delete {
+    width: 28%;
+}
+
+#contact {
+    padding: 2rem 2.5rem;
+}
+
+.contact__item {
+    width: 100%;
+    padding: 2.5rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    background-color: var(--gray-color);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.item-name {
+    text-transform: capitalize;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main>
+        <div id="input__wrapper">
+            <form action="#">
+                <input id="input__name" type="text" placeholder="Tên" required>
+                <input id="input__tel" type="text" placeholder="Điện thoại (10 chữ số)" pattern="[0-9]{10}" required>
+                <button id="btn__add-contact" type="submit">Thêm</button>
+            </form>                                      
+        </div>
+        <div id="search__wrapper">
+            <input id="input__search" type="text" placeholder="Tìm kiếm">
+            <button id="btn__search">Tìm</button>
+            <button id="btn__delete">Xóa trùng</button>
+        </div>
+        <div id="contact">
+            <div class="contact__item">
+                <span class="item-name">Alice</span>
+                <span class="item-tel">8164035456</span>
+            </div>
+        </div>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+</html>

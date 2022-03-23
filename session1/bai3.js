@@ -18,4 +18,4 @@ findValue = (...arr) => {
     }
 }
 //test
-console.log(findValue(1, 2, 3, 5, 6, 4, 2, 1, 6, 3, 5, 3, 5, 5)); // => {value: 5, count: 4}
+console.log(findValue(1, 2, 3, 5, 6, 4, 2, 1, 6, 3, 5, 3, 5, 5, 1)); // => {value: 5, count: 4}

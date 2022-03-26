@@ -1,0 +1,37 @@
+.input__item {
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label {
+    width: 25%;
+    text-align: left;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.input {
+    width: 75%;
+}
+
+input {
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+}
+
+input::placeholder {
+    color: silver;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator{
+    display: none;
+    -webkit-appearance: none;
+}

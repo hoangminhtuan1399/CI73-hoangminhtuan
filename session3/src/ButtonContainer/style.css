@@ -1,0 +1,17 @@
+.button__container {
+    margin-top: 2rem;
+    padding: 0.7rem 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.button {
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px slateblue;
+}
+
+#btn__cancel {
+    border: 2px solid #8b5aba;
+    color: dimgray;
+}

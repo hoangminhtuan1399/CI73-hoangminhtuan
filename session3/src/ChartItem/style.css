@@ -1,0 +1,22 @@
+.chart__item {
+    width: 1.5rem;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.chart__value {
+    width: 1.5rem;
+    height: 11rem;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: #baa5ed;
+}
+
+.chart__label {
+    width: 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+}

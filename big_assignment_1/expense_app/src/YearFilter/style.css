@@ -1,0 +1,28 @@
+.filter__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    font-size: 1.7rem;
+    color: white;
+    padding: 1rem;
+}
+
+.filter__by {
+    font-weight: bold;
+}
+
+.filter__select-list {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.filter__select-item {
+    padding: 1rem 3.5rem;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+}

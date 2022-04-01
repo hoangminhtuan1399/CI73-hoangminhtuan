@@ -37,30 +37,8 @@
   }
 }
 
-#container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-
-.button__wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-button {
-  text-align: center;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
 .light__wrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
 }
 
 .light {
@@ -70,18 +48,7 @@ button {
   border: 1px solid black;
 }
 
-.red {
-  background-color: red;
+button {
+  cursor: pointer;
 }
 
-.yellow {
-  background-color: yellow;
-}
-
-.green {
-  background-color: green;
-}
-
-.white {
-  background-color: white;
-}

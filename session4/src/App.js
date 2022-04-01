@@ -1,65 +1,47 @@
 import { useState } from 'react';
 import './App.css';
 function App() {
-    return (
-        <TrafficLight />
-    )
+  const [index, setIndex] = useState(0);
+  const handleNext = () => {
+    setIndex((prev) => {
+      prev++;
+      if(prev > 2) {
+        return prev = 0;
+      }
+      return prev;
+    })
+  }
+  const handlePrev = () => {
+    setIndex((prev) => {
+      prev--;
+      if(prev < 0) {
+        return prev = 2;
+      }
+      return prev;
+    })
+  }
+  return (
+    <div>
+      <div className='light__wrapper'>
+        <Light color='red' isOn={index===0}></Light>
+        <Light color='green' isOn={index===1}></Light>
+        <Light color='yellow' isOn={index===2}></Light>
+      </div>
+      <button onClick={handlePrev}>Prev</button>
+      <button onClick={handleNext}>Next</button>
+    </div>
+  )
 }
 
-const TrafficLight = (props) => {
-    const white_color = (...arr) => {
-        for (let i = 0; i < arr.length; i++) {
-            arr[i] = 'white';
-        };
-        return arr;
-    }  
-    let light_0, light_1, light_2;
-    [light_0, light_1, light_2] = white_color(light_0, light_1, light_2);
-    light_0 = '';
-    
-    const [light_arr, setLight_arr] = useState([light_0, light_1, light_2]);
-
-    const [index, setIndex] = useState(1);
-    const next_light = () => {
-      setIndex(() => {
-        if (index >= light_arr.length-1) {
-          return 0;
-        }
-        return index + 1;
-      })
-      for(let i = 0; i < light_arr.length; i++) {
-        light_arr[i] = 'white'
-      }
-      light_arr[index] = '';
-      console.log(index, light_arr);
-    }
-    // const prev_light = () => {
-    //   setIndex(() => {
-    //     if (index < 1) {
-    //       return light_arr.length-1;
-    //     }
-    //     return index - 1;
-    //   })
-    //   for(let i = 0; i < light_arr.length; i++) {
-    //     light_arr[i] = 'white'
-    //   }
-    //   light_arr[index] = '';
-    //   console.log(index, light_arr);
-    // }
-
+const Light = ({color, isOn}) => {
+  if(isOn) {
     return (
-        <div id="container">
-            <div className='button__wrapper'>
-                <button id="btn__prev" onClick>Prev</button>
-                <button id="btn__next" onClick={next_light}>Next</button>
-            </div>
-            <div className='light__wrapper'>
-                <span className={'light red ' + light_arr[0]}></span>
-                <span className={'light green ' + light_arr[1]}></span>
-                <span className={'light yellow ' + light_arr[2]}></span>
-            </div>
-        </div>
+      <span className='light' style={{backgroundColor: color}}></span>
     )
+  }
+  return (
+      <span className='light'></span>
+  )
 }
 
 export default App;

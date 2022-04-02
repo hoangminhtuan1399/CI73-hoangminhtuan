@@ -1,16 +1,15 @@
 import './style.css';
-import { RadiusBorder } from '../RadiusBorder';
 
-export const InputItem = (props) => {
+export const InputItem = ({label, id, type, placeholder, value, handleChange}) => {
     return (
         <div className="input__item">
             <div className="label">
-                <label for={props.label} id={props.label}>
-                    {props.label}
+                <label htmlFor={id} id={label}>
+                    {label}
                 </label>
             </div>
                 <div className="input">
-                    <input type={props.type} id={props.label} placeholder={props.placeholder} required/>
+                    <input onChange={handleChange} type={type} id={id} placeholder={placeholder} value={value} required/>
                 </div>
         </div>
     )

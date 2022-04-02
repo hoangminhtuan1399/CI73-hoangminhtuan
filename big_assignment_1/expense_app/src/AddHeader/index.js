@@ -1,11 +1,10 @@
 import './style.css';
-import { RadiusBorder } from "../RadiusBorder";
 import { InputContainer } from '../InputContainer';
 
-export const AddHeader = () => {
+export const AddHeader = ({handleOpenInput, expenseList, addExpenseList}) => {
     return (
         <div id="header__add">
-                <InputContainer />
+                <InputContainer handleOpenInput={handleOpenInput} expenseList={expenseList} addExpenseList={addExpenseList}/>
         </div>
     )
 }

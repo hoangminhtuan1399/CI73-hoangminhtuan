@@ -4,10 +4,10 @@ import { YearFilter } from '../YearFilter';
 import { ChartContainer } from '../ChartContainer';
 import { ExpenseList} from '../ExpenseList';
 
-export const Main = () => {
+export const Main = ({expenseList}) => {
     return (
         <div id="main">
-            <YearFilter value={2022} />
+            <YearFilter value={2022} expenseList={expenseList} />
             <RadiusBorder border_color="transparent">
                 <ChartContainer />
             </RadiusBorder>

@@ -6,7 +6,7 @@ export const Button = (props) => {
         color: `${props.text_color}`,
     }
     return (
-        <button className="button" style={buttonColor} id={props.id}> 
+        <button onClick={props.handleClick} className="button" style={buttonColor} id={props.id}> 
             <span>{props.content}</span>
         </button>
     )

@@ -1,0 +1,12 @@
+#header__home {
+    background-color: #897bda;
+    padding: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn__openInput {
+    padding: 1rem 2rem;
+}

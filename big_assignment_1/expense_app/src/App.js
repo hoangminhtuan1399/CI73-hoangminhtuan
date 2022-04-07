@@ -17,13 +17,13 @@ function App() {
       time: new Date(2022,10,16),
     },
     {
-      name: 'Some Book',
-      money: 50,
+      name: 'Bicycle',
+      money: 250,
       time: new Date(2021,10,16),
     },
     {
-      name: 'Some Book',
-      money: 50,
+      name: 'New TV',
+      money: 500,
       time: new Date(2019,10,16),
     },
   ]);
@@ -51,7 +51,7 @@ function App() {
         <AddHeader handleOpenInput={handleOpenInput} expenseList={expenseList} addExpenseList={addExpenseList}/>
       </RadiusBorder> }     
       <RadiusBorder border_color="transparent">
-        <Main expenseList={expenseList}/>
+        <Main expenseList={expenseList} setExpenseList={setExpenseList}/>
       </RadiusBorder>
     </div>
   )

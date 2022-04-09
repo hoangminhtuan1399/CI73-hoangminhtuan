@@ -4,55 +4,31 @@ import { AddHeader } from './AddHeader';
 import { RadiusBorder } from './RadiusBorder';
 import { Main } from './Main';
 import { useState } from 'react';
+import { useContext } from 'react';
+import data from './Context/DataContext';
 
 function App() {
   const [isShown, setIsShown] = useState(true);
   const handleOpenInput = () => {
     setIsShown(!isShown);
   }
-  const [expenseList, setExpenseList] = useState([
-    {
-      name: 'Some Book',
-      money: 50,
-      time: new Date(2022,10,16),
-    },
-    {
-      name: 'Bicycle',
-      money: 250,
-      time: new Date(2021,10,16),
-    },
-    {
-      name: 'New TV',
-      money: 500,
-      time: new Date(2019,10,16),
-    },
-  ]);
-
-  const addExpenseList = (name, money, time) => {
-    setExpenseList(() => {
-      return [
-        ...expenseList,
-        {
-          name: name,
-          money: money,
-          time: time,
-        }
-      ]
-    }) 
-  }
+  const [expenseList, setExpenseList] = useState(useContext(data).expenseList);
+  // console.log(expenseList);
 
   return (
     <div className="App">
-      {isShown ?  
-      <RadiusBorder border_color="transparent">
-        <HomeHeader isShown={true} handleOpenInput={handleOpenInput}/>
-      </RadiusBorder> : 
-      <RadiusBorder border_color="transparent">
-        <AddHeader handleOpenInput={handleOpenInput} expenseList={expenseList} addExpenseList={addExpenseList}/>
-      </RadiusBorder> }     
-      <RadiusBorder border_color="transparent">
-        <Main expenseList={expenseList} setExpenseList={setExpenseList}/>
-      </RadiusBorder>
+      <data.Provider value={{expenseList: expenseList, setExpenseList: setExpenseList}}>
+        {isShown ?  
+        <RadiusBorder border_color="transparent">
+          <HomeHeader isShown={true} handleOpenInput={handleOpenInput}/>
+        </RadiusBorder> : 
+        <RadiusBorder border_color="transparent">
+          <AddHeader handleOpenInput={handleOpenInput}/>
+        </RadiusBorder> }     
+        <RadiusBorder border_color="transparent">
+          <Main expenseList={expenseList} setExpenseList={setExpenseList}/>
+        </RadiusBorder>
+      </data.Provider>
     </div>
   )
 }

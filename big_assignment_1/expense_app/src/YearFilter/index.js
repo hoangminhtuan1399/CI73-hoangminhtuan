@@ -1,18 +1,12 @@
 import { useState } from 'react';
 import './style.css';
 
-export const YearFilter = ({expenseList, expenseListFilter, listFilter}) => {
+export const YearFilter = ({expenseList, yearList, listFilter}) => {
     const createId = () => { return Math.floor(Math.random()*100000) };
-    const yearList = [];
     const yearOption = [];
     
-    expenseList.forEach((item) => {
-        yearList.push(item.time.getFullYear());
-    })
-    
-    yearList.sort((a, b) => {return a-b})
-    
     const [selectValue, setSelectValue] = useState(yearList[0])
+    
     const handleChange = (e) => {
         setSelectValue(e.target.value);
         listFilter(expenseList, e.target.value);

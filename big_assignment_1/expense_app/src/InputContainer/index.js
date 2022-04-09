@@ -3,8 +3,12 @@ import '../InputItem/style.css';
 import { InputItem } from '../InputItem';
 import { ButtonContainer } from '../ButtonContainer';
 import { useState } from 'react';
+import data from '../Context/DataContext';
+import { useContext } from 'react';
 
-export const InputContainer = ({handleOpenInput, expenseList, addExpenseList}) => {
+export const InputContainer = ({handleOpenInput}) => {
+    const Data = useContext(data);
+    // console.log(Data);
     const [formValue, setFormValue] = useState(
         {
             name: '',
@@ -14,16 +18,23 @@ export const InputContainer = ({handleOpenInput, expenseList, addExpenseList}) =
     )
     const handleSubmit = (e) => {
         e.preventDefault();
-        addExpenseList(e.target[0].value, parseInt(e.target[1].value, 10), new Date(e.target[2].value));
         setFormValue(
             {
                 name: '',
                 money: 0,
                 time: '',
             }
+        );
+        Data.setExpenseList(
+            [
+                ...Data.expenseList,
+                {
+                    name: e.target[0].value,
+                    money: parseFloat(e.target[1].value),
+                    time: new Date(e.target[2].value),
+                }
+            ]
         )
-        console.log(expenseList);
-        // console.log(typeof(new Date((e.target[2].value))));
     }
     const handleChange = (e) => {
         setFormValue((prev) => {

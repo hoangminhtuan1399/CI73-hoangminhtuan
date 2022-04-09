@@ -6,22 +6,34 @@ import { ExpenseList} from '../ExpenseList';
 import { useState } from 'react';
 
 export const Main = ({expenseList}) => {
+    console.log(expenseList);
+    const yearList = [];
+        
+    for (let i = 0; i < expenseList.length; i ++) {
+        if (!yearList.includes(parseInt(expenseList[i].time.getFullYear()))) {
+            yearList.push(parseInt(expenseList[i].time.getFullYear()));
+        }
+    }
+    
+    yearList.sort((a, b) => {return a-b})
+
     const [expenseListFilter, setExpenseListFilter] = useState(
         expenseList.filter((item) => {
-            return item.time.getFullYear() == expenseList[0].time.getFullYear();
+            return item.time.getFullYear() === yearList[0];
         })
     )
     
     const listFilter = (expenseList, filter) => {
         setExpenseListFilter(() => {
             return expenseList.filter((item) => {
-                return item.time.getFullYear() == filter;
+                return item.time.getFullYear() === parseInt(filter);
             })
         })
     }
+
     return (
         <div id="main">
-            <YearFilter expenseList={expenseList} expenseListFilter={expenseListFilter} listFilter={listFilter}/>
+            <YearFilter expenseList={expenseList} yearList={yearList} listFilter={listFilter}/>
             <RadiusBorder border_color="transparent">
                 <ChartContainer />
             </RadiusBorder>
